@@ -20,12 +20,12 @@ The **Ingestion API** validates the event and immediately adds it as a job to th
 
 ### Why This Design?
 
-| Benefit | Explanation |
-| :--- | :--- |
-| **Decoupling** | Separates the fast API endpoint from slow database I/O, preventing write bottlenecks. |
-| **Speed & Throughput** | Redis provides sub-millisecond queueing, allowing the Ingestion API to handle maximum requests per second. |
-| **Reliability** | BullMQ manages job persistence, retry mechanisms, and dead-letter queues, ensuring no event is lost due to temporary failures. |
-| **Scalability** | The system is horizontally scalable: multiple Processor Workers can be added to handle peak load. |
+
+
+**Decoupling** -> Separates the fast API endpoint from slow database I/O, preventing write bottlenecks. |
+**Speed & Throughput** ->Redis provides sub-millisecond queueing, allowing the Ingestion API to handle maximum requests per second. |
+**Reliability** -> BullMQ manages job persistence, retry mechanisms, and dead-letter queues, ensuring no event is lost due to temporary failures. |
+**Scalability** ->The system is horizontally scalable: multiple Processor Workers can be added to handle peak load. |
 
 ---
 
@@ -116,19 +116,19 @@ This uses MongoDB Aggregation Framework for efficient calculations.
 
 Endpoint:
 
-http://localhost:3001/stats
+http://localhost:5000/stats
 
 📅 Get Stats for a Specific Day
 
 Bash:
 
-curl "http://localhost:3001/stats?site_id=site-abc-123&date=2025-11-14"
+curl "http://localhost:5000/stats?site_id=site-abc-123&date=2025-11-14"
 
 📊 Get All-Time Stats (No date param)
 
 Bash:
 
-curl "http://localhost:3001/stats?site_id=site-abc-123"
+curl "http://localhost:5000/stats?site_id=site-abc-123"
 
 ✅ Success Response Example
 
