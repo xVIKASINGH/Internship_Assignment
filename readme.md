@@ -1,8 +1,8 @@
-# 📈 High-Performance Website Analytics Backend Service
+# High-Performance Website Analytics Backend Service
 
 A scalable and robust backend system built with Node.js, TypeScript, BullMQ, Redis, and MongoDB, designed to reliably capture and analyze high volumes of website analytics events.
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 The system employs a decoupled, three-service architecture to maximize ingestion speed and ensure reliable processing.
 
@@ -10,7 +10,7 @@ The system employs a decoupled, three-service architecture to maximize ingestion
 
 ---
 
-## 🎯 Architecture Decision: Asynchronous Processing (BullMQ & Redis)
+##  Architecture Decision: Asynchronous Processing (BullMQ & Redis)
 
 ### How It's Implemented: The Queue
 
@@ -29,7 +29,7 @@ The **Ingestion API** validates the event and immediately adds it as a job to th
 
 ---
 
-## 📊 Database Schema (MongoDB)
+##  Database Schema (MongoDB)
 
 All raw event data is stored in the **`events`** collection in MongoDB. The schema is flexible to adapt to changing event structures.
 
@@ -45,7 +45,7 @@ Collection: events
   created_at: Date         // Record creation time (set by the processor)
 }
 
-🚀 Setup Instructions
+ Setup Instructions
 
 Follow these steps to set up and run all three services.
 
